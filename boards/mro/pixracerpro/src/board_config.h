@@ -83,7 +83,7 @@
 #define GPIO_PWM_VOLT_SEL     /* PG6 */ (GPIO_OUTPUT|GPIO_PUSHPULL|GPIO_SPEED_2MHz|GPIO_OUTPUT_SET|GPIO_PORTG|GPIO_PIN6)
 
 /* PWM */
-#define DIRECT_PWM_OUTPUT_CHANNELS  8
+#define DIRECT_PWM_OUTPUT_CHANNELS 6 
 
 /* Power supply control and monitoring GPIOs */
 #define GPIO_POWER_IN_A                 /* PB5 */ (GPIO_INPUT|GPIO_PULLUP|GPIO_PORTB|GPIO_PIN5)
@@ -150,6 +150,10 @@
 #define BOARD_HAS_ON_RESET 1 /* This board provides the board_on_reset interface */
 #define BOARD_ENABLE_CONSOLE_BUFFER
 
+/* SPI */
+#define SPI6_nRESET_EXTERNAL1	/* PI5 */ (GPIO_OUTPUT|GPIO_PUSHPULL|GPIO_SPEED_2MHz|GPIO_OUTPUT_CLEAR|GPIO_PORTI|GPIO_PIN5)
+#define SPI6_RESET(on_true)	px4_arch_gpiowrite(SPI6_nRESET_EXTERNAL1, !(on_true))
+
 #define PX4_GPIO_INIT_LIST { \
 		PX4_ADC_GPIO,                     \
 		GPIO_CAN1_TX,                     \
@@ -169,6 +173,7 @@
 		PX4_GPIO_PIN_OFF(GPIO_SDMMC1_CMD),\
 		GPIO_TONE_ALARM_IDLE,             \
 		GPIO_OTGFS_VBUS,                  \
+		SPI6_nRESET_EXTERNAL1		  \
 	}
 
 __BEGIN_DECLS

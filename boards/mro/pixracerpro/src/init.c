@@ -79,15 +79,17 @@ __EXPORT void board_peripheral_reset(int ms)
 	bool last = READ_VDD_3V3_SPEKTRUM_POWER_EN();
 	/* Keep Spektum on to discharge rail*/
 	VDD_3V3_SPEKTRUM_POWER_EN(false);
+	SPI6_RESET(true);
 
 	/* wait for the peripheral rail to reach GND */
 	usleep(ms * 1000);
 	syslog(LOG_DEBUG, "reset done, %d ms\n", ms);
 
 	/* re-enable power */
-
+	
 	/* switch the peripheral rail back on */
 	VDD_3V3_SPEKTRUM_POWER_EN(last);
+	SPI6_RESET(false);
 }
 
 /************************************************************************************
