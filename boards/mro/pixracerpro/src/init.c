@@ -161,6 +161,8 @@ __EXPORT int board_app_initialize(uintptr_t arg)
 	board_control_spi_sensors_power(true, 0xffff);
 	VDD_3V3_SPEKTRUM_POWER_EN(true);
 
+	SPI6_RESET(false);
+
 	px4_platform_init();
 
 	stm32_spiinitialize();
