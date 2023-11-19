@@ -145,7 +145,7 @@
 #define BOARD_ADC_USB_VALID     BOARD_ADC_USB_CONNECTED
 #define BOARD_ADC_BRICK_VALID   (px4_arch_gpioread(GPIO_VDD_BRICK1_VALID))
 
-#define BOARD_NUM_IO_TIMERS 3
+#define BOARD_NUM_IO_TIMERS 2 
 #define BOARD_DMA_ALLOC_POOL_SIZE 5120 /* This board provides a DMA pool and APIs */
 #define BOARD_HAS_ON_RESET 1 /* This board provides the board_on_reset interface */
 #define BOARD_ENABLE_CONSOLE_BUFFER

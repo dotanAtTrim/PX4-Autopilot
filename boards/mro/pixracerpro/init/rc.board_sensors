@@ -22,3 +22,6 @@ board_adc start
 
 # Interal DPS310 (barometer)
 dps310 -s -b 2 start
+
+# External ADIS16507
+adis16507 -S start
