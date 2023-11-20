@@ -1693,6 +1693,11 @@ Mavlink::configure_streams_to_default(const char *configure_single_stream)
 	/* fallthrough */
 	case MAVLINK_MODE_CUSTOM:
 		//stream nothing
+		//no, Trim Robotics says: stream enough data for BaseCam Gimbal controller Acceleration conmpensation
+		configure_stream_local("GLOBAL_POSITION_INT", 10.0f);
+		configure_stream_local("LOCAL_POSITION_NED", 10.0f);
+		configure_stream_local("ATTITUDE", 20.0f);
+		configure_stream_local("STATUSTEXT", 0.0f);
 		break;
 
 	case MAVLINK_MODE_CONFIG: // USB
