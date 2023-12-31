@@ -4,8 +4,11 @@
 #------------------------------------------------------------------------------
 board_adc start
 
+# External ADIS16507
+adis16507 -S -R 6 start
+
 # Internal ICM-20602
-#icm20602 -s -b 1 -R 8 start
+icm20602 -s -b 1 -R 8 start
 
 # Internal SPI bus BMI088 accel & gyro
 #if bmi088 -A -s -b 5 -R 8 start
@@ -23,5 +26,3 @@ board_adc start
 # Interal DPS310 (barometer)
 dps310 -s -b 2 start
 
-# External ADIS16507
-adis16507 -S start
