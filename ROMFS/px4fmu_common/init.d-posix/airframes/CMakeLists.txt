@@ -90,6 +90,7 @@ px4_add_romfs_files(
 	8011_gz_omnicopter
 
 	10015_gazebo-classic_iris
+	10015_gazebo-classic_iris.post
 	10016_none_iris
 	10017_jmavsim_iris
 	10018_gazebo-classic_iris_foggy_lidar
