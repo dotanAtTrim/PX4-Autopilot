@@ -1,0 +1,5 @@
+menuconfig MODULES_TRIM_ROBOTICS
+	bool "trim_robotics"
+	default y
+	---help---
+		Enable support for Trim Robotics' module
